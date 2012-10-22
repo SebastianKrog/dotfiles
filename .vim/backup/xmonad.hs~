@@ -1,0 +1,24 @@
+import XMonad
+import XMonad.Hooks.DynamicLog  
+import XMonad.Hooks.ManageDocks
+import XMonad.Util.EZConfig
+import XMonad.Util.Run(spawnPipe)
+import System.IO
+
+main = do
+  xmproc <- spawnPipe "/usr/bin/xmobar"
+  xmonad $ defaultConfig
+    { modMask = mod4Mask -- Use Super instead of Alt
+    , terminal = "urxvt"
+    , manageHook = manageDocks <+> manageHook defaultConfig
+    , layoutHook = avoidStruts $ layoutHook defaultConfig
+    , logHook = dynamicLogWithPP $ xmobarPP
+      { ppOutput = hPutStrLn xmproc
+      }
+    -- more changes
+    }`additionalKeys`
+      [ ((mod4Mask, xK_f), spawn "chromium")
+      , ((mod4Mask .|. shiftMask, xK_f), spawn "chromium --incognito")
+      , ((mod4Mask .|. shiftMask, xK_l), spawn "slimlock")
+      , ((mod4Mask, xK_g), spawn "gvim")
+      ]

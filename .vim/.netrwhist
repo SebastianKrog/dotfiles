@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/sebastian/.xmonad'
+let g:netrw_dirhist_2='ftp://studenterklubben@web8.gigahost.dk/'
+let g:netrw_dirhist_3='ftp://studenterklubben@web8.gigahost.dk/www/'
+let g:netrw_dirhist_4='ftp://studenterklubben@web8.gigahost.dk/www/studklub.dk/'
+let g:netrw_dirhist_5='ftp://studenterklubben@web8.gigahost.dk/www/rusvejleder.dk/'
+let g:netrw_dirhist_6='ftp://studenterklubben@web8.gigahost.dk/www/rusvejleder.dk/wp-content/'
+let g:netrw_dirhist_7='ftp://studenterklubben@web8.gigahost.dk/'
